@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TINDAHAN - Settings</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="home-container">
+        <div class="menu-header">
+            <h2>TINDAHAN System</h2>
+            <p class="user-info">System Settings</p>
+        </div>
+
+        <div class="menu-system">
+            <nav class="main-menu">
+                <button class="menu-btn" onclick="navigateTo('profile')">
+                    <span class="menu-icon">👤</span>
+                    Profile
+                </button>
+                <button class="menu-btn" onclick="navigateTo('products')">
+                    <span class="menu-icon">📦</span>
+                    Products
+                </button>
+                <button class="menu-btn" onclick="navigateTo('analytics')">
+                    <span class="menu-icon">📊</span>
+                    Analytics
+                </button>
+                <button class="menu-btn" onclick="navigateTo('inventory')">
+                    <span class="menu-icon">📋</span>
+                    Inventory
+                </button>
+                <button class="menu-btn active" onclick="navigateTo('settings')">
+                    <span class="menu-icon">⚙️</span>
+                    Settings
+                </button>
+            </nav>
+
+            <div class="content-area">
+                <div class="content-section active" id="settings-section">
+                    <h3>⚙️ System Settings</h3>
+                    <div class="settings-content">
+                        <div class="settings-grid">
+                            <div class="settings-group">
+                                <h4>👤 Account Settings</h4>
+                                <div class="settings-options">
+                                    <button class="settings-btn" onclick="openModal('changePassword')">
+                                        🔐 Change Password
+                                    </button>
+                                    <button class="settings-btn" onclick="openModal('updateProfile')">
+                                        ✏️ Update Profile
+                                    </button>
+                                    <button class="settings-btn" onclick="openModal('accountSecurity')">
+                                        🛡️ Account Security
+                                    </button>
+                                    <button class="settings-btn" onclick="openModal('notificationSettings')">
+                                        🔔 Notifications
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <h4>🏪 Store Settings</h4>
+                                <div class="settings-options">
+                                    <button class="settings-btn" onclick="openModal('storeInfo')">
+                                        📍 Store Information
+                                    </button>
+                                    <button class="settings-btn" onclick="openModal('businessHours')">
+                                        🕒 Business Hours
+                                    </button>
+                                    <button class="settings-btn" onclick="openModal('paymentMethods')">
+                                        💳 Payment Methods
+                                    </button>
+                                    <button class="settings-btn" onclick="openModal('taxSettings')">
+                                        📊 Tax Settings
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <h4>📦 Inventory Settings</h4>
+                                <div class="settings-options">
+                                    <button class="settings-btn" onclick="openModal('lowStockAlerts')">
+                                        ⚠️ Low Stock Alerts
+                                    </button>
+                                    <button class="settings-btn" onclick="openModal('expiryNotifications')">
+                                        ⏰ Expiry Notifications
+                                    </button>
+                                    <button class="settings-btn" onclick="openModal('categoryManagement')">
+                                        📂 Category Management
+                                    </button>
+                                    <button class="settings-btn" onclick="openModal('barcodeSettings')">
+                                        📱 Barcode Settings
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <h4>📊 System Settings</h4>
+                                <div class="settings-options">
+                                    <button class="settings-btn" onclick="openModal('backupData')">
+                                        💾 Backup & Restore
+                                    </button>
+                                    <button class="settings-btn" onclick="openModal('systemLogs')">
+                                        📋 System Logs
+                                    </button>
+                                    <button class="settings-btn" onclick="openModal('performance')">
+                                        ⚡ Performance
+                                    </button>
+                                    <button class="settings-btn" onclick="openModal('integrations')">
+                                        🔗 Integrations
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <h4>🎨 Appearance</h4>
+                                <div class="settings-options">
+                                    <button class="settings-btn" onclick="openModal('themeSettings')">
+                                        🎨 Theme Settings
+                                    </button>
+                                    <button class="settings-btn" onclick="openModal('language')">
+                                        🌐 Language
+                                    </button>
+                                    <button class="settings-btn" onclick="openModal('displayOptions')">
+                                        🖥️ Display Options
+                                    </button>
+                                    <button class="settings-btn" onclick="openModal('accessibility')">
+                                        ♿ Accessibility
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <h4>🚪 Account Actions</h4>
+                                <div class="settings-options">
+                                    <button class="settings-btn secondary" onclick="openModal('exportData')">
+                                        📤 Export Data
+                                    </button>
+                                    <button class="settings-btn secondary" onclick="openModal('importData')">
+                                        📥 Import Data
+                                    </button>
+                                    <button id="logoutBtn" class="settings-btn danger">
+                                        🚪 Logout
+                                    </button>
+                                    <button class="settings-btn danger" onclick="openModal('deleteAccount')">
+                                        🗑️ Delete Account
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-info">
+                            <div class="info-card">
+                                <h4>💡 System Information</h4>
+                                <div class="info-grid">
+                                    <div class="info-item">
+                                        <span class="info-label">Version:</span>
+                                        <span class="info-value">TINDAHAN v2.1.0</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Last Updated:</span>
+                                        <span class="info-value">2024-01-15</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Database:</span>
+                                        <span class="info-value">Healthy</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Storage Used:</span>
+                                        <span class="info-value">2.4 GB / 10 GB</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-footer">
+        </div>
+    </div>
+
+    <!-- Settings Modals -->
+    <div id="settingsModal" class="settings-modal">
+        <div class="modal-content">
+            <div id="modalContent">
+                <!-- Modal content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

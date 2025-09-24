@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TINDAHAN - Inventory</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="home-container">
+        <div class="menu-header">
+            <h2>TINDAHAN System</h2>
+            <p class="user-info">Inventory Management</p>
+        </div>
+
+        <div class="menu-system">
+            <nav class="main-menu">
+                <button class="menu-btn" onclick="navigateTo('profile')">
+                    <span class="menu-icon">👤</span>
+                    Profile
+                </button>
+                <button class="menu-btn" onclick="navigateTo('products')">
+                    <span class="menu-icon">📦</span>
+                    Products
+                </button>
+                <button class="menu-btn" onclick="navigateTo('analytics')">
+                    <span class="menu-icon">📊</span>
+                    Analytics
+                </button>
+                <button class="menu-btn active" onclick="navigateTo('inventory')">
+                    <span class="menu-icon">📋</span>
+                    Inventory
+                </button>
+                <button class="menu-btn" onclick="navigateTo('settings')">
+                    <span class="menu-icon">⚙️</span>
+                    Settings
+                </button>
+            </nav>
+
+            <div class="content-area">
+                <div class="content-section active" id="inventory-section">
+                    <h3>📋 Inventory Management</h3>
+                    <div class="inventory-content">
+                        <div class="inventory-header">
+                            <div class="inventory-stats">
+                                <div class="stat-card">
+                                    <h4>Total Items</h4>
+                                    <span class="stat-number">2,847</span>
+                                    <span class="stat-trend positive">+156</span>
+                                </div>
+                                <div class="stat-card">
+                                    <h4>Total Categories</h4>
+                                    <span class="stat-number">12</span>
+                                    <span class="stat-trend neutral">0</span>
+                                </div>
+                                <div class="stat-card">
+                                    <h4>Total Value</h4>
+                                    <span class="stat-number">₱156,780</span>
+                                    <span class="stat-trend positive">+₱8,500</span>
+                                </div>
+                                <div class="stat-card">
+                                    <h4>Items to Restock</h4>
+                                    <span class="stat-number warning">4</span>
+                                    <span class="stat-trend negative">+2</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="inventory-grid">
+                            <div class="inventory-categories">
+                                <h4>Categories Overview</h4>
+                                <div class="category-list">
+                                    <div class="category-item">
+                                        <span class="category-icon">🍪</span>
+                                        <div class="category-info">
+                                            <h5>Snacks</h5>
+                                            <p>Items: 156 | Value: ₱23,400</p>
+                                        </div>
+                                        <span class="category-status good">Good</span>
+                                    </div>
+                                    <div class="category-item">
+                                        <span class="category-icon">🧴</span>
+                                        <div class="category-info">
+                                            <h5>Household</h5>
+                                            <p>Items: 89 | Value: ₱45,600</p>
+                                        </div>
+                                        <span class="category-status good">Good</span>
+                                    </div>
+                                    <div class="category-item">
+                                        <span class="category-icon">🥛</span>
+                                        <div class="category-info">
+                                            <h5>Dairy</h5>
+                                            <p>Items: 67 | Value: ₱28,900</p>
+                                        </div>
+                                        <span class="category-status warning">Low Stock</span>
+                                    </div>
+                                    <div class="category-item">
+                                        <span class="category-icon">🧊</span>
+                                        <div class="category-info">
+                                            <h5>Frozen Food</h5>
+                                            <p>Items: 45 | Value: ₱32,100</p>
+                                        </div>
+                                        <span class="category-status good">Good</span>
+                                    </div>
+                                    <div class="category-item">
+                                        <span class="category-icon">🥫</span>
+                                        <div class="category-info">
+                                            <h5>Canned Food</h5>
+                                            <p>Items: 78 | Value: ₱18,750</p>
+                                        </div>
+                                        <span class="category-status good">Good</span>
+                                    </div>
+                                    <div class="category-item">
+                                        <span class="category-icon">🥤</span>
+                                        <div class="category-info">
+                                            <h5>Drinks</h5>
+                                            <p>Items: 92 | Value: ₱8,030</p>
+                                        </div>
+                                        <span class="category-status good">Good</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="inventory-alerts">
+                                <h4>Stock Alerts</h4>
+                                <div class="alerts-list">
+                                    <div class="alert-item critical">
+                                        <span class="alert-icon">🚨</span>
+                                        <div class="alert-content">
+                                            <h5>Cooking Oil 1L</h5>
+                                            <p>Only 3 items remaining</p>
+                                        </div>
+                                        <button class="alert-action" onclick="restockItem('Cooking Oil 1L')">Restock</button>
+                                    </div>
+                                    <div class="alert-item warning">
+                                        <span class="alert-icon">⚠️</span>
+                                        <div class="alert-content">
+                                            <h5>Instant Noodles</h5>
+                                            <p>Only 2 items remaining</p>
+                                        </div>
+                                        <button class="alert-action" onclick="restockItem('Instant Noodles')">Restock</button>
+                                    </div>
+                                    <div class="alert-item expired">
+                                        <span class="alert-icon">⏰</span>
+                                        <div class="alert-content">
+                                            <h5>Canned Tuna</h5>
+                                            <p>Expired on 2024-01-10</p>
+                                        </div>
+                                        <button class="alert-action" onclick="removeExpired('Canned Tuna')">Remove</button>
+                                    </div>
+                                    <div class="alert-item warning">
+                                        <span class="alert-icon">⚠️</span>
+                                        <div class="alert-content">
+                                            <h5>Milk Powder 500g</h5>
+                                            <p>Expires in 7 days</p>
+                                        </div>
+                                        <button class="alert-action" onclick="checkExpiry('Milk Powder 500g')">Check</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="inventory-actions">
+                                <h4>Quick Actions</h4>
+                                <div class="action-buttons">
+                                    <button class="action-btn" onclick="viewFullInventory()">📋 View Full Inventory</button>
+                                    <button class="action-btn secondary" onclick="addNewItem()">➕ Add New Item</button>
+                                    <button class="action-btn secondary" onclick="generateInventoryReport()">📄 Generate Report</button>
+                                    <button class="action-btn secondary" onclick="scanInventory()">📱 Scan Items</button>
+                                </div>
+                            </div>
+
+                            <div class="inventory-recent">
+                                <h4>Recent Activity</h4>
+                                <div class="activity-list">
+                                    <div class="activity-item">
+                                        <span class="activity-time">2 hours ago</span>
+                                        <span class="activity-action">Added 20 units of Rice 25kg</span>
+                                    </div>
+                                    <div class="activity-item">
+                                        <span class="activity-time">4 hours ago</span>
+                                        <span class="activity-action">Removed 5 expired items</span>
+                                    </div>
+                                    <div class="activity-item">
+                                        <span class="activity-time">6 hours ago</span>
+                                        <span class="activity-action">Updated stock for Sugar 1kg</span>
+                                    </div>
+                                    <div class="activity-item">
+                                        <span class="activity-time">1 day ago</span>
+                                        <span class="activity-action">Added new product: Frozen Chicken</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-footer">
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>

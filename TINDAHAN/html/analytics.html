@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TINDAHAN - Analytics</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="home-container">
+        <div class="menu-header">
+            <h2>TINDAHAN System</h2>
+            <p class="user-info">Analytics Dashboard</p>
+        </div>
+
+        <div class="menu-system">
+            <nav class="main-menu">
+                <button class="menu-btn" onclick="navigateTo('profile')">
+                    <span class="menu-icon">👤</span>
+                    Profile
+                </button>
+                <button class="menu-btn" onclick="navigateTo('products')">
+                    <span class="menu-icon">📦</span>
+                    Products
+                </button>
+                <button class="menu-btn active" onclick="navigateTo('analytics')">
+                    <span class="menu-icon">📊</span>
+                    Analytics
+                </button>
+                <button class="menu-btn" onclick="navigateTo('inventory')">
+                    <span class="menu-icon">📋</span>
+                    Inventory
+                </button>
+                <button class="menu-btn" onclick="navigateTo('settings')">
+                    <span class="menu-icon">⚙️</span>
+                    Settings
+                </button>
+            </nav>
+
+            <div class="content-area">
+                <div class="content-section active" id="analytics-section">
+                    <h3>📊 Analytics Dashboard</h3>
+                    <div class="analytics-content">
+                        <div class="analytics-header">
+                            <div class="analytics-stats">
+                                <div class="stat-card">
+                                    <h4>Today's Sales</h4>
+                                    <span class="stat-number">₱12,450</span>
+                                    <span class="stat-trend positive">+8.2%</span>
+                                </div>
+                                <div class="stat-card">
+                                    <h4>This Month</h4>
+                                    <span class="stat-number">₱156,780</span>
+                                    <span class="stat-trend positive">+12.5%</span>
+                                </div>
+                                <div class="stat-card">
+                                    <h4>Growth Rate</h4>
+                                    <span class="stat-number">+12.5%</span>
+                                    <span class="stat-trend positive">↗</span>
+                                </div>
+                                <div class="stat-card">
+                                    <h4>Active Customers</h4>
+                                    <span class="stat-number">1,247</span>
+                                    <span class="stat-trend positive">+5.1%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="analytics-grid">
+                            <div class="analytics-chart">
+                                <h4>Sales Overview</h4>
+                                <div class="chart-placeholder">
+                                    <div class="chart-bars">
+                                        <div class="chart-bar" style="height: 60%">
+                                            <span class="bar-label">Mon</span>
+                                            <span class="bar-value">₱8,500</span>
+                                        </div>
+                                        <div class="chart-bar" style="height: 75%">
+                                            <span class="bar-label">Tue</span>
+                                            <span class="bar-value">₱10,200</span>
+                                        </div>
+                                        <div class="chart-bar" style="height: 45%">
+                                            <span class="bar-label">Wed</span>
+                                            <span class="bar-value">₱6,800</span>
+                                        </div>
+                                        <div class="chart-bar" style="height: 85%">
+                                            <span class="bar-label">Thu</span>
+                                            <span class="bar-value">₱11,900</span>
+                                        </div>
+                                        <div class="chart-bar" style="height: 70%">
+                                            <span class="bar-label">Fri</span>
+                                            <span class="bar-value">₱9,750</span>
+                                        </div>
+                                        <div class="chart-bar" style="height: 90%">
+                                            <span class="bar-label">Sat</span>
+                                            <span class="bar-value">₱12,450</span>
+                                        </div>
+                                        <div class="chart-bar" style="height: 55%">
+                                            <span class="bar-label">Sun</span>
+                                            <span class="bar-value">₱7,600</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="analytics-chart">
+                                <h4>Product Categories</h4>
+                                <div class="chart-placeholder">
+                                    <div class="pie-chart">
+                                        <div class="pie-segment" data-value="35" data-color="#4CAF50">
+                                            <span class="segment-label">Snacks</span>
+                                            <span class="segment-value">35%</span>
+                                        </div>
+                                        <div class="pie-segment" data-value="25" data-color="#2196F3">
+                                            <span class="segment-label">Household</span>
+                                            <span class="segment-value">25%</span>
+                                        </div>
+                                        <div class="pie-segment" data-value="20" data-color="#FF9800">
+                                            <span class="segment-label">Dairy</span>
+                                            <span class="segment-value">20%</span>
+                                        </div>
+                                        <div class="pie-segment" data-value="12" data-color="#F44336">
+                                            <span class="segment-label">Frozen</span>
+                                            <span class="segment-value">12%</span>
+                                        </div>
+                                        <div class="pie-segment" data-value="8" data-color="#9C27B0">
+                                            <span class="segment-label">Drinks</span>
+                                            <span class="segment-value">8%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="analytics-insights">
+                                <h4>Key Insights</h4>
+                                <div class="insights-list">
+                                    <div class="insight-item">
+                                        <span class="insight-icon">📈</span>
+                                        <div class="insight-content">
+                                            <h5>Sales Trend</h5>
+                                            <p>Sales have increased by 12.5% this month compared to last month</p>
+                                        </div>
+                                    </div>
+                                    <div class="insight-item">
+                                        <span class="insight-icon">🛒</span>
+                                        <div class="insight-content">
+                                            <h5>Top Category</h5>
+                                            <p>Snacks category is performing best with 35% of total sales</p>
+                                        </div>
+                                    </div>
+                                    <div class="insight-item">
+                                        <span class="insight-icon">⚠️</span>
+                                        <div class="insight-content">
+                                            <h5>Low Stock Alert</h5>
+                                            <p>4 products are running low on stock and need restocking</p>
+                                        </div>
+                                    </div>
+                                    <div class="insight-item">
+                                        <span class="insight-icon">📅</span>
+                                        <div class="insight-content">
+                                            <h5>Peak Hours</h5>
+                                            <p>Highest sales occur between 5-7 PM on weekdays</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="analytics-actions">
+                                <h4>Quick Actions</h4>
+                                <div class="action-buttons">
+                                    <button class="action-btn" onclick="generateReport()">📄 Generate Report</button>
+                                    <button class="action-btn secondary" onclick="exportData()">📊 Export Data</button>
+                                    <button class="action-btn secondary" onclick="viewDetails()">📋 View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-footer">
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TINDAHAN - Products</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="home-container">
+        <div class="menu-header">
+            <h2>TINDAHAN System</h2>
+            <p class="user-info">Products Management</p>
+        </div>
+
+        <div class="menu-system">
+            <nav class="main-menu">
+                <button class="menu-btn" onclick="navigateTo('profile')">
+                    <span class="menu-icon">👤</span>
+                    Profile
+                </button>
+                <button class="menu-btn active" onclick="navigateTo('products')">
+                    <span class="menu-icon">📦</span>
+                    Products
+                </button>
+                <button class="menu-btn" onclick="navigateTo('analytics')">
+                    <span class="menu-icon">📊</span>
+                    Analytics
+                </button>
+                <button class="menu-btn" onclick="navigateTo('inventory')">
+                    <span class="menu-icon">📋</span>
+                    Inventory
+                </button>
+                <button class="menu-btn" onclick="navigateTo('settings')">
+                    <span class="menu-icon">⚙️</span>
+                    Settings
+                </button>
+            </nav>
+
+            <div class="content-area">
+                <div class="content-section active" id="products-section">
+                    <h3>📦 Products Management</h3>
+                    <div class="products-content">
+                        <div class="products-header">
+                            <div class="stats-grid">
+                                <div class="stat-card">
+                                    <h4>Total Products</h4>
+                                    <span class="stat-number">24</span>
+                                </div>
+                                <div class="stat-card">
+                                    <h4>In Stock</h4>
+                                    <span class="stat-number">18</span>
+                                </div>
+                                <div class="stat-card">
+                                    <h4>Low Stock</h4>
+                                    <span class="stat-number warning">4</span>
+                                </div>
+                                <div class="stat-card">
+                                    <h4>Expired</h4>
+                                    <span class="stat-number expired">2</span>
+                                </div>
+                            </div>
+                            <div class="products-actions">
+                                <button class="action-btn" id="manageProductsBtn">Manage Products</button>
+                                <button class="action-btn secondary" id="addProductBtn">Add New Product</button>
+                            </div>
+                        </div>
+
+                        <div class="products-overview" id="productsOverview">
+                            <h4>Product Categories</h4>
+
+                            <!-- Category Navigation Menu -->
+                            <div class="category-menu">
+                                <div class="category-header" id="categoryHeader">
+                                    <h4>Filter by Category</h4>
+                                    <span class="category-toggle">▼</span>
+                                </div>
+                                <div class="category-tabs" id="categoryTabs">
+                                    <button class="category-tab active" data-category="all">All</button>
+                                    <button class="category-tab" data-category="snacks">Snacks</button>
+                                    <button class="category-tab" data-category="dairy">Dairy</button>
+                                    <button class="category-tab" data-category="frozen">Frozen Food</button>
+                                    <button class="category-tab" data-category="household">Household</button>
+                                    <button class="category-tab" data-category="canned">Canned Food</button>
+                                    <button class="category-tab" data-category="drinks">Drinks</button>
+                                </div>
+                                <div class="scroll-nav">
+                                    <button class="scroll-btn scroll-up" id="scrollUpBtn" title="Scroll Up">▲</button>
+                                    <button class="scroll-btn scroll-down" id="scrollDownBtn" title="Scroll Down">▼</button>
+                                </div>
+                            </div>
+
+                            <div class="products-grid" id="productsGrid">
+                                <div class="product-card" data-category="grains">
+                                    <h5>Rice 25kg</h5>
+                                    <p class="product-info">Category: <span class="product-category">Grains</span></p>
+                                    <p class="product-info">Stock: <span class="stock-level good">45</span></p>
+                                    <p class="product-info">Expires: <span class="expiry-date">2024-06-15</span></p>
+                                    <span class="product-status in-stock">In Stock</span>
+                                </div>
+                                <div class="product-card" data-category="household">
+                                    <h5>Cooking Oil 1L</h5>
+                                    <p class="product-info">Category: <span class="product-category">Household</span></p>
+                                    <p class="product-info">Stock: <span class="stock-level low">3</span></p>
+                                    <p class="product-info">Expires: <span class="expiry-date">2024-03-20</span></p>
+                                    <span class="product-status low-stock">Low Stock</span>
+                                </div>
+                                <div class="product-card" data-category="canned">
+                                    <h5>Canned Tuna</h5>
+                                    <p class="product-info">Category: <span class="product-category">Canned Food</span></p>
+                                    <p class="product-info">Stock: <span class="stock-level good">28</span></p>
+                                    <p class="product-info">Expires: <span class="expiry-date">2024-01-10</span></p>
+                                    <span class="product-status expired">Expired</span>
+                                </div>
+                                <div class="product-card" data-category="household">
+                                    <h5>Sugar 1kg</h5>
+                                    <p class="product-info">Category: <span class="product-category">Household</span></p>
+                                    <p class="product-info">Stock: <span class="stock-level good">32</span></p>
+                                    <p class="product-info">Expires: <span class="expiry-date">2024-08-30</span></p>
+                                    <span class="product-status in-stock">In Stock</span>
+                                </div>
+                                <div class="product-card" data-category="dairy">
+                                    <h5>Milk Powder 500g</h5>
+                                    <p class="product-info">Category: <span class="product-category">Dairy</span></p>
+                                    <p class="product-info">Stock: <span class="stock-level good">15</span></p>
+                                    <p class="product-info">Expires: <span class="expiry-date">2024-05-22</span></p>
+                                    <span class="product-status in-stock">In Stock</span>
+                                </div>
+                                <div class="product-card" data-category="snacks">
+                                    <h5>Instant Noodles</h5>
+                                    <p class="product-info">Category: <span class="product-category">Snacks</span></p>
+                                    <p class="product-info">Stock: <span class="stock-level low">2</span></p>
+                                    <p class="product-info">Expires: <span class="expiry-date">2024-04-18</span></p>
+                                    <span class="product-status low-stock">Low Stock</span>
+                                </div>
+                                <div class="product-card" data-category="snacks">
+                                    <h5>Potato Chips</h5>
+                                    <p class="product-info">Category: <span class="product-category">Snacks</span></p>
+                                    <p class="product-info">Stock: <span class="stock-level good">24</span></p>
+                                    <p class="product-info">Expires: <span class="expiry-date">2024-07-10</span></p>
+                                    <span class="product-status in-stock">In Stock</span>
+                                </div>
+                                <div class="product-card" data-category="dairy">
+                                    <h5>Cheese Slices</h5>
+                                    <p class="product-info">Category: <span class="product-category">Dairy</span></p>
+                                    <p class="product-info">Stock: <span class="stock-level good">18</span></p>
+                                    <p class="product-info">Expires: <span class="expiry-date">2024-04-30</span></p>
+                                    <span class="product-status in-stock">In Stock</span>
+                                </div>
+                                <div class="product-card" data-category="frozen">
+                                    <h5>Frozen Chicken</h5>
+                                    <p class="product-info">Category: <span class="product-category">Frozen Food</span></p>
+                                    <p class="product-info">Stock: <span class="stock-level good">12</span></p>
+                                    <p class="product-info">Expires: <span class="expiry-date">2024-09-15</span></p>
+                                    <span class="product-status in-stock">In Stock</span>
+                                </div>
+                                <div class="product-card" data-category="drinks">
+                                    <h5>Bottled Water 1L</h5>
+                                    <p class="product-info">Category: <span class="product-category">Drinks</span></p>
+                                    <p class="product-info">Stock: <span class="stock-level good">36</span></p>
+                                    <p class="product-info">Expires: <span class="expiry-date">2025-12-31</span></p>
+                                    <span class="product-status in-stock">In Stock</span>
+                                </div>
+                                <div class="product-card" data-category="canned">
+                                    <h5>Corn Kernels</h5>
+                                    <p class="product-info">Category: <span class="product-category">Canned Food</span></p>
+                                    <p class="product-info">Stock: <span class="stock-level good">20</span></p>
+                                    <p class="product-info">Expires: <span class="expiry-date">2024-10-20</span></p>
+                                    <span class="product-status in-stock">In Stock</span>
+                                </div>
+                                <div class="product-card" data-category="household">
+                                    <h5>Detergent Powder</h5>
+                                    <p class="product-info">Category: <span class="product-category">Household</span></p>
+                                    <p class="product-info">Stock: <span class="stock-level good">8</span></p>
+                                    <p class="product-info">Expires: <span class="expiry-date">2024-11-30</span></p>
+                                    <span class="product-status in-stock">In Stock</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="products-management" id="productsManagement" style="display: none;">
+                            <div class="management-header">
+                                <h4>Product Management</h4>
+                                <button class="back-btn" id="backToOverview">← Back to Overview</button>
+                            </div>
+                            <div class="products-table-container">
+                                <table class="products-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Product Name</th>
+                                            <th>Category</th>
+                                            <th>Stock Level</th>
+                                            <th>Status</th>
+                                            <th>Expiration Date</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="productsTableBody">
+                                        <tr>
+                                            <td>Rice 25kg</td>
+                                            <td>Grains</td>
+                                            <td><span class="stock-indicator good">45</span></td>
+                                            <td><span class="status-badge in-stock">In Stock</span></td>
+                                            <td>2024-06-15</td>
+                                            <td>
+                                                <button class="table-btn edit" onclick="editProduct(this)">Edit</button>
+                                                <button class="table-btn delete" onclick="deleteProduct(this)">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cooking Oil 1L</td>
+                                            <td>Oil</td>
+                                            <td><span class="stock-indicator low">3</span></td>
+                                            <td><span class="status-badge low-stock">Low Stock</span></td>
+                                            <td>2024-03-20</td>
+                                            <td>
+                                                <button class="table-btn edit" onclick="editProduct(this)">Edit</button>
+                                                <button class="table-btn delete" onclick="deleteProduct(this)">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Canned Tuna</td>
+                                            <td>Canned Goods</td>
+                                            <td><span class="stock-indicator expired">0</span></td>
+                                            <td><span class="status-badge expired">Expired</span></td>
+                                            <td>2024-01-10</td>
+                                            <td>
+                                                <button class="table-btn edit" onclick="editProduct(this)">Edit</button>
+                                                <button class="table-btn delete" onclick="deleteProduct(this)">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sugar 1kg</td>
+                                            <td>Sugar</td>
+                                            <td><span class="stock-indicator good">32</span></td>
+                                            <td><span class="status-badge in-stock">In Stock</span></td>
+                                            <td>2024-08-30</td>
+                                            <td>
+                                                <button class="table-btn edit" onclick="editProduct(this)">Edit</button>
+                                                <button class="table-btn delete" onclick="deleteProduct(this)">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Milk Powder 500g</td>
+                                            <td>Dairy</td>
+                                            <td><span class="stock-indicator good">15</span></td>
+                                            <td><span class="status-badge in-stock">In Stock</span></td>
+                                            <td>2024-05-22</td>
+                                            <td>
+                                                <button class="table-btn edit" onclick="editProduct(this)">Edit</button>
+                                                <button class="table-btn delete" onclick="deleteProduct(this)">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Instant Noodles</td>
+                                            <td>Noodles</td>
+                                            <td><span class="stock-indicator low">2</span></td>
+                                            <td><span class="status-badge low-stock">Low Stock</span></td>
+                                            <td>2024-04-18</td>
+                                            <td>
+                                                <button class="table-btn edit" onclick="editProduct(this)">Edit</button>
+                                                <button class="table-btn delete" onclick="deleteProduct(this)">Delete</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-footer">
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>

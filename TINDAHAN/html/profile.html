@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TINDAHAN - Profile</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="home-container">
+        <div class="menu-header">
+            <h2>TINDAHAN System</h2>
+            <p class="user-info">User Profile</p>
+        </div>
+
+        <div class="menu-system">
+            <nav class="main-menu">
+                <button class="menu-btn active" onclick="navigateTo('profile')">
+                    <span class="menu-icon">👤</span>
+                    Profile
+                </button>
+                <button class="menu-btn" onclick="navigateTo('products')">
+                    <span class="menu-icon">📦</span>
+                    Products
+                </button>
+                <button class="menu-btn" onclick="navigateTo('analytics')">
+                    <span class="menu-icon">📊</span>
+                    Analytics
+                </button>
+                <button class="menu-btn" onclick="navigateTo('inventory')">
+                    <span class="menu-icon">📋</span>
+                    Inventory
+                </button>
+                <button class="menu-btn" onclick="navigateTo('settings')">
+                    <span class="menu-icon">⚙️</span>
+                    Settings
+                </button>
+            </nav>
+
+            <div class="content-area">
+                <div class="content-section active" id="profile-section">
+                    <h3>👤 User Profile</h3>
+                    <div class="profile-content">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <span class="avatar-icon">👤</span>
+                            </div>
+                            <div class="profile-info">
+                                <h4 id="profile-username">user1</h4>
+                                <p class="profile-role">Administrator</p>
+                                <p class="profile-status">Active</p>
+                            </div>
+                        </div>
+
+                        <div class="profile-details">
+                            <div class="profile-card">
+                                <h4>📋 Personal Information</h4>
+                                <div class="info-grid">
+                                    <div class="info-item">
+                                        <span class="info-label">Username:</span>
+                                        <span class="info-value" id="profile-username-display">user1</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Full Name:</span>
+                                        <span class="info-value">Administrator User</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Email:</span>
+                                        <span class="info-value">admin@tindahan.com</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Phone:</span>
+                                        <span class="info-value">+63 912 345 6789</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Role:</span>
+                                        <span class="info-value">Administrator</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Department:</span>
+                                        <span class="info-value">Management</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-card">
+                                <h4>📊 Account Statistics</h4>
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Login Count:</span>
+                                        <span class="stat-value">247</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Last Login:</span>
+                                        <span class="stat-value" id="last-login">Today, 2:30 PM</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Account Created:</span>
+                                        <span class="stat-value">January 15, 2024</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Status:</span>
+                                        <span class="stat-value active">Active</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-card">
+                                <h4>⚡ Quick Actions</h4>
+                                <div class="action-buttons">
+                                    <button class="action-btn" onclick="editProfile()">✏️ Edit Profile</button>
+                                    <button class="action-btn secondary" onclick="changePassword()">🔐 Change Password</button>
+                                    <button class="action-btn secondary" onclick="viewActivity()">📋 View Activity Log</button>
+                                </div>
+                            </div>
+
+                            <div class="profile-card">
+                                <h4>🔔 Recent Activity</h4>
+                                <div class="activity-list">
+                                    <div class="activity-item">
+                                        <span class="activity-time">2 hours ago</span>
+                                        <span class="activity-action">Updated product inventory</span>
+                                    </div>
+                                    <div class="activity-item">
+                                        <span class="activity-time">4 hours ago</span>
+                                        <span class="activity-action">Generated sales report</span>
+                                    </div>
+                                    <div class="activity-item">
+                                        <span class="activity-time">6 hours ago</span>
+                                        <span class="activity-action">Added new product category</span>
+                                    </div>
+                                    <div class="activity-item">
+                                        <span class="activity-time">1 day ago</span>
+                                        <span class="activity-action">Modified system settings</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-footer">
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>
